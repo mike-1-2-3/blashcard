@@ -5,7 +5,7 @@ A bash script that gives out flashcards. Now you can keep your notes in a quizza
 ##Basic Use
 
 Download a zip of the repository and extract it. Enter the uncompressed directory and run  
-./blashcards.sh linux.cards history.cards
+./blashcards.sh linux.cards history.cards   
 to go through all of the sample cards.
 
 To make your own cards, simply make a text file of this format:
@@ -23,6 +23,7 @@ A: -minute
 
 ##More examples
 
+* Run ./blashcards --help for usage information.
 * To find out what sections are in the linux file, run ./blashcards.sh -p linux.cards
 * To ask questions just about systemd and greek history, run ./blashcards.sh linux.cards -s systemd history.cards -s greek
 * Optional installation: 1. chmod 0555 blashcards.sh 2. sudo mv blashcards.sh /usr/local/bin
