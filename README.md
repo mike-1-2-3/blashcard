@@ -8,21 +8,15 @@ Say you downloaded the script and two example files into your current directory.
 
 To make your own cards, simply make a text file of this format:
 
-Q: Knock knock?
+Q: Knock knock?  
+A: Who's there?  
 
-A: Who's there?
-
-Q: Network classes?
-
-A: A - 0
-
-B - 10
-
-C - 110
-
-D - 1110
-
-E - 1111
+Q: Network classes?  
+A: A - 0  
+B - 10  
+C - 110  
+D - 1110  
+E - 1111  
 
 ##More examples
 
