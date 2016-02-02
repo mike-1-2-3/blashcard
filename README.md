@@ -4,19 +4,22 @@ A bash script that gives out flashcards. Now you can keep your notes in a quizza
 
 ##Basic Use
 
-Say you downloaded the script and two example files into your current directory. You could make it ask you all of the questions with ./blashcards.sh linux.cards history.cards
+Download a zip of the repository and extract it. Enter the uncompressed directory and run  
+./blashcards.sh linux.cards history.cards
+to go through all of the sample cards.
 
 To make your own cards, simply make a text file of this format:
 
 Q: Knock knock?  
 A: Who's there?  
 
-Q: Network classes?  
-A: A - 0  
-B - 10  
-C - 110  
-D - 1110  
-E - 1111  
+Q: Columns of a user crontab?   
+A: -minute   
+-hour   
+-day of month   
+-month   
+-day of week   
+-command to run   
 
 ##More examples
 

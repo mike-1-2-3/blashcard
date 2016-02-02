@@ -1,7 +1,5 @@
 #!/bin/bash
-
-# Copyright Mike Harris 2016
-# GPL 3, see the file LICENSE
+# Copyright Mike Harris 2016. GPL 3, see the file LICENSE
 
 #------------ Function declarations
 function print-usage {
@@ -22,7 +20,6 @@ Usage: blashcards [-o] filename1 [-s sets] [filename2 [-s sets]] ...
     -Optionally, start a new set with the line [setname]
 WARNING - input is not sanitized. Do not read arbitrary files 
           if you don't trust them."
-
     exit 0
 }
 
@@ -34,7 +31,7 @@ function parse-leading-args {
     _max=${#1}
     while [ $_cur -lt $_max ]
     do
-	case ${1:_cur:_cur} in
+	case ${1:_cur:1} in
 	    p)
 		_printing=0
 		;;
@@ -42,7 +39,7 @@ function parse-leading-args {
 		_order=0
 		;;
 	    *)
-		echo "Unknown option:" ${1:_cur:_cur}
+		echo "Unknown option:" ${1:_cur:1}
                 echo "Try TUI-flashcards --help"
 		exit 0
 		;;
@@ -52,7 +49,6 @@ function parse-leading-args {
 }
 
 #----------------------- Parse the arguments
-
 if [ $# = 0 ] || [ $1 = "help" ] || [ $1 = "--help" ] ; then
     print-usage
 fi
@@ -82,7 +78,6 @@ while [ $# -gt 0 ] ; do
 done	 
 
 #------------------------ print sets if requested
-
 if [ $_printing = 0 ] ; then
     for (( i=0 ; i<_num_files ; i++))
     do
@@ -101,12 +96,10 @@ if [ $_printing = 0 ] ; then
 fi
 
 #----------------------- load up the questions
-
 _num_questions=-1
 
 for (( i=0 ; i<_num_files ; i++))
 do
-    #echo "working on ${_files[i]} in ${_sets[i]}"
     _in_set=1
     _in_question=1
     _in_answer=1
@@ -125,13 +118,10 @@ do
 	    if [ ! -z ${_sets[i]} ] ; then
 		if [[ ${_sets[i]} =~ ${_line:1:(( ${#_line} - 2 ))} ]] ; then
 		    _in_set=0
-		    #echo "entering set"
 		else
 		    _in_set=1
-		    #echo "leaving set"
 		fi
 	    else
-		#echo "leaving. am i in set? $_in_set" 
 		continue
 	    fi
 	fi
@@ -174,14 +164,7 @@ if [ ! $_order = 0 ] ; then
     done
 fi
 
-#echo "ORDERING $_num_questions"
-#for (( i = 0 ; i <= _num_questions ; i++))
-#do
-#    echo ${_ordering[$i]}
-#done
-
 #------------------------- The main loop
-
 _quit=1
 _grey='\033[0;37m'
 _green='\033[0m'
@@ -216,25 +199,19 @@ Score: $_score"
        echo "Good job!"
        exit 0
     fi
-    echo "Want the wrong ones again (y/n)?"
-    read -s -N 1
-    if [ $REPLY = "n" ] ; then
-       _quit=0
-    fi
-     let "_num_questions = $_wrong -1"
+    while [ 1 = 1 ] ; do
+	echo "Want the wrong ones again (y/n)?"
+	read -s -N 1
+	if [ -z $REPLY ] ; then
+	    continue
+	fi
+	if [ $REPLY = "n" ] ; then
+	    _quit=0
+	    break
+	fi
+	if [ $REPLY = "y" ] ; then
+	    break
+	fi
+    done
+    let "_num_questions = $_wrong -1"
 done
-       
-    
-if [ ] ; then
-for (( i = 0; i<=$_num_questions; i++ ))
-do
-    echo questions
-    echo -e ${_questions[$i]}
-done
-
-for (( i = 0; i<=$_num_questions; i++ ))
-do
-    echo answers
-    echo -e ${_answers[$i]}
-done
-fi
