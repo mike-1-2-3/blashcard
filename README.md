@@ -25,8 +25,8 @@ A: -minute
 
 * Run ./blashcards --help for usage information.
 * To find out what sections are in the linux file, run ./blashcards.sh -p linux.cards
-* To ask questions just about systemd and greek history, run ./blashcards.sh linux.cards -s systemd history.cards -s greek
-* Optional installation: 1. chmod 0555 blashcards.sh 2. sudo mv blashcards.sh /usr/local/bin
+* To only get questions about systemd and greek history, run ./blashcards.sh linux.cards -s systemd history.cards -s greek
+* Optional installation: 1. chmod 0555 blashcards.sh 2. sudo mv blashcards.sh /usr/local/bin   
 This step will allow you to open your cards file anywhere using blashcards.sh instead of /path/to/blashcards.sh.
 
 If you make sets that others may find useful, I'd be happy to add them to this repository!
