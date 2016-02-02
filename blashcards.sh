@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Copyright Mike Harris 2016
+# GPL 3, see the file LICENSE
+
 #------------ Function declarations
 function print-usage {
     echo "This script gives out flash cards.
