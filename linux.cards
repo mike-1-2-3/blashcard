@@ -1,0 +1,37 @@
+[systemd]
+Q: If you use systemd, what file would you edit to change tty options?
+A: /lib/systemd/system/getty@.service
+
+Q: What systemd command pages through all installed units?
+A: systemctl list-unit-files
+
+Q: What systemd command stops daily cron jobs?
+A: systemctl stop cron-daily.timer
+
+[journald]
+Q: How would you compress your journald logs?
+A: First run journald --setup-keys
+Then, in /etc/systemd/journald.conf set Seal=true
+
+Q: What is the basic format of journalctl?
+A: journalctl [options] <field from systemd.journal-fields>=<value>
+
+[other]
+Q: What file configures the font of a tty?
+A: /etc/defaults/console-setup
+
+Q: Fields of gshadow?
+A: -groupname
+-password (! if none)
+-comma separated admins
+-comma separated members
+
+Q: How do you sort your passwd and group files?
+A: pwck -s
+grpck -s
+
+Q: What command lets you save the last page of a tty to a file?
+A: screendump > filename
+
+Q: How do you decide if something goes in .bashrc or .profile?
+A: .profile should contain environment variables, .bashrc contains bash specific stuff.
