@@ -7,15 +7,22 @@ A bash script that gives out flashcards. Now you can keep your notes in a quizza
 Say you downloaded the script and two example files into your current directory. You could make it ask you all of the questions with ./blashcards.sh linux.cards history.cards
 
 To make your own cards, simply make a text file of this format:
+
 Q: Knock knock?
+
 A: Who's there?
 
 Q: Network classes?
+
 A: A - 0
-   B - 10
-   C - 110
-   D - 1110
-   E - 1111
+
+B - 10
+
+C - 110
+
+D - 1110
+
+E - 1111
 
 ##More examples
 
