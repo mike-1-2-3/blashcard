@@ -30,7 +30,7 @@ A: -minute
 ##Optional installation
 For convenience, you will probably want to:  
 * Put the script somewhere in your path. /usr/local/bin/blashcards.sh is a good spot.   
-* Change the group owner with chgrp <probably your primary group name> /usr/local/bin/blashcards.sh   
+* Change the group owner with chgrp \<probably your primary group name\> /usr/local/bin/blashcards.sh   
 * Restrict permissions to the script with chmod 0050 /usr/local/bin/blashcards.sh   
 
 If you make sets that others may find useful, I'd be happy to add them to this repository!
